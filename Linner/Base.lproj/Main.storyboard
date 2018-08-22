@@ -26,6 +26,14 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6FD-qf-dAw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ8-SP-TTk">
+                                <rect key="frame" x="172" y="235" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="post"/>
+                                <connections>
+                                    <action selector="createPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2cG-qE-8dH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LC-FC-5Tv">
                                 <rect key="frame" x="176" y="352" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,12 +42,12 @@
                                     <action selector="creatLine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mf0-jf-U3G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ8-SP-TTk">
-                                <rect key="frame" x="172" y="235" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-G2-k2U">
+                                <rect key="frame" x="142" y="470" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="post"/>
+                                <state key="normal" title="Retrieve Posts"/>
                                 <connections>
-                                    <action selector="createPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2cG-qE-8dH"/>
+                                    <action selector="retrievePosts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtB-Vh-bx0"/>
                                 </connections>
                             </button>
                         </subviews>

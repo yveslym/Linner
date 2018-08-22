@@ -10,10 +10,12 @@ import Foundation
 import Firebase
 struct PostServices{
     static func create(post: Post, completion: @escaping (Post) -> ()){
-        let ref = Constant.newPost
+        let ref = Constant.postRef.childByAutoId()
         post.postId = ref.key
-        ref.setValue(post.toDictionary())
-        completion(post)
+        ref.setValue(post.toDictionary()) { (_, _) in
+             completion(post)
+        }
+       
         
     }
     // method to retrieve all the line posted
@@ -39,7 +41,12 @@ struct PostServices{
         let ref = Constant.archivePost.child(post.postId!)
         ref.setValue(post.toDictionary()) { (_, _) in
             let postRef = Constant.postRef.child(post.postId!)
-            postRef.removeValue()
+            postRef.removeValue(completionBlock: { (error, _) in
+                if error == nil{
+                completion(true)
+                }
+            })
+            
         }
     }
 }

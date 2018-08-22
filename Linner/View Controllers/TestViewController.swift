@@ -30,9 +30,10 @@ class TestViewController: UIViewController {
         let user = Auth.auth().currentUser
         
        
-        let post = Post(clientID: (user?.uid)!, clientName: (user?.email!)!, postID: "", date: Date().timeString(), location: "24 marshal street, san francisco, CA 94102")
+        let post = Post(clientID: (user?.uid)!, clientName: (user?.email!)!, postID: "", date: Date().toString(), location: "24 marshal street, san francisco, CA 94102")
         PostServices.create(post: post) { (post) in
             self.posts.append(post)
+            print(post.postId!)
         }
     }
     func loginUser(){
@@ -40,9 +41,9 @@ class TestViewController: UIViewController {
         
         InstanceID.instanceID().instanceID { (result, error) in
            
-            Auth.auth().createUser(withEmail: "yves9@mail.com", password: "12345678", completion: { (auth, _) in
+            Auth.auth().createUser(withEmail: "yves@mail.com", password: "12345678", completion: { (auth, _) in
                 
-                let user = User(fn: "yves", ln: "son", un: "yveslym", deviceToken: (result?.token)!, accountType: "client",email: (Auth.auth().currentUser?.email!)!)
+                let user = User(fn: "yves", ln: "son", un: "yveslym", deviceToken: (result?.token)!, accountType: "linner",email: (Auth.auth().currentUser?.email!)!)
                 
                 UserServices.create("", user: user, completion: { (created) in
                     print(created)
@@ -62,6 +63,18 @@ class TestViewController: UIViewController {
             }
         }
     }
+    
+    func retrievePost(){
+        PostServices.show { (post) in
+            if let post = post{
+            self.posts = post
+            print(post.count)
+            }else{
+                print("no post in the dsatabase")
+            }
+        }
+    }
+    
     @IBAction func login(_ sender: UIButton){
         loginUser()
     }
@@ -71,6 +84,9 @@ class TestViewController: UIViewController {
     
     @IBAction func creatLine(_ sender: UIButton){
         createLine()
+    }
+    @IBAction func retrievePosts(_ sender: UIButton){
+       retrievePost()
     }
     
 }

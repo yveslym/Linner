@@ -38,7 +38,8 @@ class Post: Decodable{
         return ["clientId":clientId,
                 "clientName":clientName,
                 "location":location,
-                "isArchived":isArchived]
+                "isArchived":isArchived,
+                "date":date]
     }
 }
 

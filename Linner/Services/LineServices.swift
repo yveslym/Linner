@@ -19,7 +19,9 @@ struct LineServices{
             if error == nil{
                 PostServices.archviePost(post: post, completion: { (archived) in
                     if archived{
+                        print("line created and post archived")
                         return completion(line)
+                        
                     }
                     else{
                         print("didn'archived the post")
@@ -27,8 +29,6 @@ struct LineServices{
                     }
                 })
             }
-            print("didn't create line")
-           return completion(nil)
         }
     }
     
