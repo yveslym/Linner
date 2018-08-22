@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>621462921050-eoptjlubda8umrqrkc734mnq39skpm7g.apps.googleusercontent.com</string>
+	<string>48224046024-9nppga0rtd4het9ou1kp349lifb99ri1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.621462921050-eoptjlubda8umrqrkc734mnq39skpm7g</string>
+	<string>com.googleusercontent.apps.48224046024-9nppga0rtd4het9ou1kp349lifb99ri1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBj3gHWwMRN2QKqu4rMcvMVVLDdyvQU4qg</string>
+	<string>AIzaSyCoF799a3d09ozX5T1gpsJ915JMkFvmUyU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>621462921050</string>
+	<string>48224046024</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>yveslym.geoUser</string>
+	<string>com.yveslym.linner</string>
 	<key>PROJECT_ID</key>
-	<string>geouser-5d045</string>
+	<string>linner-37ec9</string>
 	<key>STORAGE_BUCKET</key>
-	<string>geouser-5d045.appspot.com</string>
+	<string>linner-37ec9.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:621462921050:ios:77118712e06387cf</string>
+	<string>1:48224046024:ios:3f0f1bf9d7c9126e</string>
 	<key>DATABASE_URL</key>
-	<string>https://geouser-5d045.firebaseio.com</string>
+	<string>https://linner-37ec9.firebaseio.com</string>
 </dict>
 </plist>

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2056C83A212D61FA00684938 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2056C839212D61F900684938 /* GoogleService-Info.plist */; };
+		2056C83C212DDF3F00684938 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C83B212DDF3F00684938 /* Line.swift */; };
+		2056C83E212DE0FE00684938 /* LineServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C83D212DE0FE00684938 /* LineServices.swift */; };
+		2056C841212DFF5500684938 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C840212DFF5500684938 /* Date+String.swift */; };
+		2056C843212E097F00684938 /* Constant Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C842212E097F00684938 /* Constant Database.swift */; };
 		20800815212C835A006E5223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800814212C835A006E5223 /* AppDelegate.swift */; };
 		20800817212C835A006E5223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800816212C835A006E5223 /* ViewController.swift */; };
 		2080081A212C835A006E5223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20800818212C835A006E5223 /* Main.storyboard */; };
@@ -14,14 +19,15 @@
 		2080081F212C835C006E5223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2080081D212C835C006E5223 /* LaunchScreen.storyboard */; };
 		2080082A212C835D006E5223 /* LinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800829212C835D006E5223 /* LinnerTests.swift */; };
 		20800835212C835D006E5223 /* LinnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800834212C835D006E5223 /* LinnerUITests.swift */; };
-		20800844212C84D3006E5223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20800843212C84D3006E5223 /* GoogleService-Info.plist */; };
-		20800845212C84D3006E5223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20800843212C84D3006E5223 /* GoogleService-Info.plist */; };
 		20800848212C8907006E5223 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800847212C8907006E5223 /* User.swift */; };
 		20800849212C8907006E5223 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800847212C8907006E5223 /* User.swift */; };
 		2080084B212C89F4006E5223 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080084A212C89F4006E5223 /* Post.swift */; };
 		2080084C212C89F4006E5223 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080084A212C89F4006E5223 /* Post.swift */; };
 		2080084F212C8D78006E5223 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080084E212C8D78006E5223 /* UserServices.swift */; };
 		20800850212C8D78006E5223 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080084E212C8D78006E5223 /* UserServices.swift */; };
+		20800853212C9790006E5223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800852212C9790006E5223 /* LoginViewController.swift */; };
+		20800855212CA66C006E5223 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800854212CA66C006E5223 /* TestViewController.swift */; };
+		20800857212CA8FD006E5223 /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800856212CA8FD006E5223 /* PostServices.swift */; };
 		3A61AC77B02E88C3CA68F9D8 /* Pods_Linner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C07A31F46227E4F046D2E4 /* Pods_Linner.framework */; };
 		3F75824D7D8CACACDA9B1567 /* Pods_LinnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED7DFEC1A078C68DAA71BD8 /* Pods_LinnerUITests.framework */; };
 		DFCA5993BAE52D9B8EE6A9AF /* Pods_LinnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C7198415C98A7C7F5C6B86 /* Pods_LinnerTests.framework */; };
@@ -46,6 +52,11 @@
 
 /* Begin PBXFileReference section */
 		1ED7DFEC1A078C68DAA71BD8 /* Pods_LinnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2056C839212D61F900684938 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2056C83B212DDF3F00684938 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		2056C83D212DE0FE00684938 /* LineServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineServices.swift; sourceTree = "<group>"; };
+		2056C840212DFF5500684938 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		2056C842212E097F00684938 /* Constant Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant Database.swift"; sourceTree = "<group>"; };
 		20800811212C835A006E5223 /* Linner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20800814212C835A006E5223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20800816212C835A006E5223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +70,13 @@
 		20800830212C835D006E5223 /* LinnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20800834212C835D006E5223 /* LinnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinnerUITests.swift; sourceTree = "<group>"; };
 		20800836212C835D006E5223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20800843212C84D3006E5223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20800847212C8907006E5223 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2080084A212C89F4006E5223 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2080084E212C8D78006E5223 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		20800852212C9790006E5223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		20800854212CA66C006E5223 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		20800856212CA8FD006E5223 /* PostServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
+		2080085C212CC91A006E5223 /* Linner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Linner.entitlements; sourceTree = "<group>"; };
 		3495ACA252DBF73A3C9F7495 /* Pods-Linner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Linner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Linner/Pods-Linner.debug.xcconfig"; sourceTree = "<group>"; };
 		8221A9FD2B56F159881F8172 /* Pods-LinnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinnerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LinnerUITests/Pods-LinnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90C07A31F46227E4F046D2E4 /* Pods_Linner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Linner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2056C83F212DFF4200684938 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2056C840212DFF5500684938 /* Date+String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		20800808212C835A006E5223 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +148,9 @@
 		20800813212C835A006E5223 /* Linner */ = {
 			isa = PBXGroup;
 			children = (
+				2056C83F212DFF4200684938 /* Extensions */,
+				2080085C212CC91A006E5223 /* Linner.entitlements */,
+				20800851212C9736006E5223 /* View Controllers */,
 				2080084D212C8D61006E5223 /* Services */,
 				20800846212C8881006E5223 /* Models */,
 				20800842212C842A006E5223 /* Supporting File */,
@@ -159,8 +184,9 @@
 		20800842212C842A006E5223 /* Supporting File */ = {
 			isa = PBXGroup;
 			children = (
-				20800843212C84D3006E5223 /* GoogleService-Info.plist */,
+				2056C839212D61F900684938 /* GoogleService-Info.plist */,
 				20800814212C835A006E5223 /* AppDelegate.swift */,
+				2056C842212E097F00684938 /* Constant Database.swift */,
 			);
 			path = "Supporting File";
 			sourceTree = "<group>";
@@ -170,6 +196,7 @@
 			children = (
 				20800847212C8907006E5223 /* User.swift */,
 				2080084A212C89F4006E5223 /* Post.swift */,
+				2056C83B212DDF3F00684938 /* Line.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,8 +205,19 @@
 			isa = PBXGroup;
 			children = (
 				2080084E212C8D78006E5223 /* UserServices.swift */,
+				20800856212CA8FD006E5223 /* PostServices.swift */,
+				2056C83D212DE0FE00684938 /* LineServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		20800851212C9736006E5223 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20800852212C9790006E5223 /* LoginViewController.swift */,
+				20800854212CA66C006E5223 /* TestViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		9FCF5FC7EDC157BEB8158C75 /* Pods */ = {
@@ -280,6 +318,11 @@
 				TargetAttributes = {
 					20800810212C835A006E5223 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					20800824212C835D006E5223 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -317,7 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2080081F212C835C006E5223 /* LaunchScreen.storyboard in Resources */,
-				20800844212C84D3006E5223 /* GoogleService-Info.plist in Resources */,
+				2056C83A212D61FA00684938 /* GoogleService-Info.plist in Resources */,
 				2080081C212C835C006E5223 /* Assets.xcassets in Resources */,
 				2080081A212C835A006E5223 /* Main.storyboard in Resources */,
 			);
@@ -327,7 +370,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20800845212C84D3006E5223 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +517,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -486,6 +529,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -502,11 +546,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20800855212CA66C006E5223 /* TestViewController.swift in Sources */,
+				2056C843212E097F00684938 /* Constant Database.swift in Sources */,
+				20800853212C9790006E5223 /* LoginViewController.swift in Sources */,
 				20800817212C835A006E5223 /* ViewController.swift in Sources */,
 				20800815212C835A006E5223 /* AppDelegate.swift in Sources */,
 				2080084F212C8D78006E5223 /* UserServices.swift in Sources */,
+				2056C83E212DE0FE00684938 /* LineServices.swift in Sources */,
 				20800848212C8907006E5223 /* User.swift in Sources */,
+				2056C841212DFF5500684938 /* Date+String.swift in Sources */,
+				2056C83C212DDF3F00684938 /* Line.swift in Sources */,
 				2080084B212C89F4006E5223 /* Post.swift in Sources */,
+				20800857212CA8FD006E5223 /* PostServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +734,7 @@
 			baseConfigurationReference = 3495ACA252DBF73A3C9F7495 /* Pods-Linner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Linner/Linner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7R433H2CL;
 				INFOPLIST_FILE = Linner/Info.plist;
@@ -690,10 +742,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yveslym.Linner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yveslym.linner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -702,6 +754,7 @@
 			baseConfigurationReference = B025C866439CDE2451E4D512 /* Pods-Linner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Linner/Linner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7R433H2CL;
 				INFOPLIST_FILE = Linner/Info.plist;
@@ -709,10 +762,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yveslym.Linner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yveslym.linner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

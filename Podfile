@@ -15,6 +15,7 @@ target 'Linner' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'GoogleSignIn'
+   pod 'Firebase/Messaging'
   target 'LinnerTests' do
     inherit! :search_paths
     # Pods for testing

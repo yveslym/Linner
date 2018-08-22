@@ -12,8 +12,23 @@ class User: Decodable{
     let firstName: String
     let lastName: String
     let userName: String
-    let deviceToken: String
+    var deviceToken: String?
     let accountType: String
+    
+    init(fn: String, ln: String, un: String, deviceToken: String, accountType: String){
+        self.firstName = fn
+        self.lastName = ln
+        self.deviceToken = deviceToken
+        self.accountType = accountType
+        self.userName = un
+    }
+    func toDictionary() -> [String: Any]{
+        return["firstName": firstName,
+               "lastName": lastName,
+               "deviceToken": deviceToken ?? "",
+            "accountType":accountType,
+            "userName":userName]
+    }
 }
 
 
