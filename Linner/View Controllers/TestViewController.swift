@@ -12,6 +12,8 @@ import Firebase
 
 class TestViewController: UIViewController {
 
+    var posts = [Post]()
+    var lines = [Line]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,22 +29,37 @@ class TestViewController: UIViewController {
     func createPost(){
         let user = Auth.auth().currentUser
         
-        let address = Address(street: "22 marshal Street", zipcode: "12345", country: "USA", city: "SF")
-        let post = Post(clientID: (user?.uid)!, clientName: (user?.email!)!, postID: "", date: Date(), location: address)
+       
+        let post = Post(clientID: (user?.uid)!, clientName: (user?.email!)!, postID: "", date: Date().timeString(), location: "24 marshal street, san francisco, CA 94102")
         PostServices.create(post: post) { (post) in
-            print(post.postId ?? "no id")
+            self.posts.append(post)
         }
     }
     func loginUser(){
-        let user = User(fn: "yves", ln: "son", un: "yveslym", deviceToken: "", accountType: "client")
+       
         
         InstanceID.instanceID().instanceID { (result, error) in
-            user.deviceToken = result?.token
+           
             Auth.auth().createUser(withEmail: "yves9@mail.com", password: "12345678", completion: { (auth, _) in
+                
+                let user = User(fn: "yves", ln: "son", un: "yveslym", deviceToken: (result?.token)!, accountType: "client",email: (Auth.auth().currentUser?.email!)!)
+                
                 UserServices.create("", user: user, completion: { (created) in
                     print(created)
                 })
             })
+        }
+    }
+    
+    func createLine(){
+        if !posts.isEmpty{
+            
+            let post = posts.removeFirst()
+            LineServices.create(post: post) { (line) in
+                if let line = line{
+                    self.lines.append(line)
+                }
+            }
         }
     }
     @IBAction func login(_ sender: UIButton){
@@ -51,6 +68,11 @@ class TestViewController: UIViewController {
     @IBAction func createPost(_ sender: UIButton){
         createPost()
     }
+    
+    @IBAction func creatLine(_ sender: UIButton){
+        createLine()
+    }
+    
 }
 
 

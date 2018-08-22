@@ -14,13 +14,15 @@ class User: Decodable{
     let userName: String
     var deviceToken: String?
     let accountType: String
+    let email: String
     
-    init(fn: String, ln: String, un: String, deviceToken: String, accountType: String){
+    init(fn: String, ln: String, un: String, deviceToken: String, accountType: String, email: String){
         self.firstName = fn
         self.lastName = ln
         self.deviceToken = deviceToken
         self.accountType = accountType
         self.userName = un
+        self.email = email
     }
     func toDictionary() -> [String: Any]{
         return["firstName": firstName,

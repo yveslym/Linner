@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 struct LineServices{
     /// method to crearte new line and archive the post
-    static func create(post: Post, completion: @escaping (Bool)->()){
+    static func create(post: Post, completion: @escaping (Line?)->()){
         let line = Line(post: post)
         let ref = Database.database().reference().child("Lines").childByAutoId()
         line.lineId = ref.key
@@ -19,16 +19,16 @@ struct LineServices{
             if error == nil{
                 PostServices.archviePost(post: post, completion: { (archived) in
                     if archived{
-                        return completion(true)
+                        return completion(line)
                     }
                     else{
                         print("didn'archived the post")
-                        return completion(false)
+                        //return completion(false)
                     }
                 })
             }
             print("didn't create line")
-           return completion(false)
+           return completion(nil)
         }
     }
     
