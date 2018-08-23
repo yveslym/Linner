@@ -55,10 +55,10 @@ struct LineServices{
     // method to update new when line start
     static func startLine(line: Line, completion: @escaping(Bool) ->()){
         line.onGoing = true
-        line.startTime = Date().timeString()
+        line.startTime = Date().toString()
         let ref = Database.database().reference().child("Lines").child(line.lineId!)
         ref.updateChildValues(line.toDictionary()) { (error, _) in
-            if error != nil{
+            if error == nil{
                 return completion(true)
             }
             return completion(false)
@@ -76,19 +76,38 @@ struct LineServices{
     static func endLine(line: Line, completion: @escaping(Line)->()){
         line.onGoing = false
         line.isCompleted = true
-        line.endTime = Date().timeString()
-        line.lineTime = calculateTimeInterval(start: line.startTime.timeDate(), end: line.endTime.timeDate())
+        line.endTime = Date().toString()
+        line.lineTime = calculateTimeInterval(start: line.startTime.toDate(), end: line.endTime.toDate())
         
         let ref = Constant.lineRef.child(line.lineId!)
+        
         ref.updateChildValues(line.toDictionary()) { (_, newRef) in
+            print("line updated to end-line")
             showSingleLine(key: line.lineId!, completion: { (newLine) in
-                return completion(newLine)
+                archiveLine(line: newLine, completion: { (archived) in
+                    if archived == true{
+                        print("Line archived")
+                    return completion(newLine)
+                    }
+                })
+               
             })
         }
     }
     
+    /// method to archive line after completed and delete from line database
+    private static func archiveLine(line: Line, completion: @escaping(Bool)->()){
+        let ref = Constant.archiveLine.child(line.lineId!)
+        ref.setValue(line.toDictionary()) { (_, _) in
+            let lineRef = Constant.lineRef.child(line.lineId!)
+            lineRef.removeValue(completionBlock: { (_, _) in
+                completion(true)
+            })
+            
+        }
+    }
     static private func calculateTimeInterval(start: Date, end:Date) -> String{
-        let diff = Int(start.timeIntervalSince1970 - end.timeIntervalSince1970)
+        let diff = Int(end.timeIntervalSince1970 - start.timeIntervalSince1970)
         let inHours = diff/3600
         let inMin = (diff - inHours * 3600) / 60
         return String(inMin)

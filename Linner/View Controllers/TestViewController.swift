@@ -75,6 +75,19 @@ class TestViewController: UIViewController {
         }
     }
     
+    func retrieveLine(){
+        LineServices.show { (line) in
+            if let line = line{
+                self.lines = line
+                print(line.count)
+            }else{
+            print("no line in the database")
+            }
+        }
+    }
+    
+    
+    
     @IBAction func login(_ sender: UIButton){
         loginUser()
     }
@@ -88,6 +101,22 @@ class TestViewController: UIViewController {
     @IBAction func retrievePosts(_ sender: UIButton){
        retrievePost()
     }
+    @IBAction func retrieveLines(_ sender: UIButton){
+        retrieveLine()
+    }
+    @IBAction func startLine(_ sender: UIButton){
+        LineServices.startLine(line: lines.first!) { (started) in
+            print("line started ", started)
+        }
+    }
+    
+    @IBAction func endLine(_ sender: UIButton){
+        LineServices.endLine(line: lines.first!) { (line) in
+            print(line.toDictionary())
+        }
+    }
+    
+    
     
 }
 
