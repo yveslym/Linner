@@ -9,19 +9,39 @@
 import Foundation
 import Firebase
 class Post: Decodable{
-    let clientId: String
-    let clientName: String
+    var clientId: String
+    var clientName: String
     var postId: String?
-    let date: String
-    let location: String
+    var date: String
+    var location: String
     var isArchived: Bool
+    var description: String
+    var title: String
+    var duration: String
     
-    init(clientID: String, clientName: String,postID: String, date: String, location: String){
+    init(clientID: String, clientName: String,postID: String, date: String, location: String, title: String, description: String, duration: String){
         self.clientId = clientID
         self.clientName = clientName
         self.date = date
         self.location = location
         self.isArchived = false
+        self.postId = ""
+        self.title = title
+        self.description = description
+        self.duration = duration
+        
+    }
+    init(){
+        self.clientId = ""
+        self.clientName = ""
+        self.date = ""
+        self.location = ""
+        self.isArchived = false
+        self.postId = ""
+        self.title = ""
+        self.description = ""
+         self.duration = ""
+        
     }
     
     init(snapshot: DataSnapshot){
@@ -32,6 +52,10 @@ class Post: Decodable{
         self.location = value["location"] as! String
         self.date = value["date"] as! String
         self.isArchived = value["isArchived"] as! Bool
+        self.postId = snapshot.key
+        self.title = value["title"] as! String
+        self.description = value["description"] as! String
+         self.duration = value["duration"] as! String
     }
     
     func toDictionary() -> [String: Any]{
@@ -39,7 +63,10 @@ class Post: Decodable{
                 "clientName":clientName,
                 "location":location,
                 "isArchived":isArchived,
-                "date":date]
+                "date":date,
+                "duration":duration,
+                "description":description,
+                "title":title]
     }
 }
 
