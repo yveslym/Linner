@@ -9,10 +9,13 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     // sign in button
     @IBOutlet weak var googleButton: GIDSignInButton!
+    @IBOutlet weak var facebookButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,8 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().uiDelegate = self
        // GIDSignIn.sharedInstance().signIn()
         setUpGoogleButton()
-
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +35,33 @@ class LoginViewController: UIViewController {
 
    
 }
-// authenticate with google
+extension LoginViewController: FBSDKLoginButtonDelegate{
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            // User is signed in
+        
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        <#code#>
+    }
+    
+    
+}
+
+/// authenticate with google
 extension LoginViewController: GIDSignInUIDelegate{
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
@@ -65,5 +95,8 @@ extension LoginViewController: GIDSignInUIDelegate{
     func setUpGoogleButton(){
         self.googleButton.colorScheme = .dark
         self.googleButton.style = .wide
+        
+        self.facebookButton.delegate = self
+        self.facebookButton.readPermissions = ["public_profile", "email"]
     }
 }

@@ -13,6 +13,7 @@ import UserNotifications
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        // Add any custom logic here.
+      
+    
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
         
@@ -128,7 +133,7 @@ extension AppDelegate: GIDSignInDelegate{
                                                        accessToken: authentication.accessToken)
        
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if error == nil {
+            if error != nil {
                 //self.presentAlert(title: "Login Error", message: "coun't register please try again!!!")
                 return
             }
@@ -156,9 +161,18 @@ extension AppDelegate: GIDSignInDelegate{
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
+            let googleHandle = GIDSignIn.sharedInstance().handle(url,
                                                      sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: [:])
+            
+            let facebbokHandle: Bool = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+            // Add any custom logic here.
+            if googleHandle && facebbokHandle{
+                return googleHandle
+            }
+            else{
+                return false
+            }
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
