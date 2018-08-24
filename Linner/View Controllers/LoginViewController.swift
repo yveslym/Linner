@@ -42,8 +42,9 @@ extension LoginViewController: FBSDKLoginButtonDelegate{
             print(error.localizedDescription)
             return
         }
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-
+        guard (FBSDKAccessToken.current()) != nil else {return}
+         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             if error != nil {
                 // ...
@@ -51,7 +52,7 @@ extension LoginViewController: FBSDKLoginButtonDelegate{
             }
             // User is signed in
             UserServices.loginWithFacebook(sender: self, completion: { (user) in
-                if let user = user{
+                if user != nil{
                      self.performSegue(withIdentifier: "client", sender: nil)
                 }
             })
@@ -99,7 +100,8 @@ extension LoginViewController: GIDSignInUIDelegate{
     }
     func setUpGoogleButton(){
         self.googleButton.colorScheme = .dark
-        self.googleButton.style = .wide
+        self.googleButton.style = .standard
+       
         
         self.facebookButton.delegate = self
         self.facebookButton.readPermissions = ["public_profile", "email"]

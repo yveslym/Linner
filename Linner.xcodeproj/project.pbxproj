@@ -12,7 +12,6 @@
 		2056C83E212DE0FE00684938 /* LineServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C83D212DE0FE00684938 /* LineServices.swift */; };
 		2056C841212DFF5500684938 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C840212DFF5500684938 /* Date+String.swift */; };
 		2056C843212E097F00684938 /* Constant Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C842212E097F00684938 /* Constant Database.swift */; };
-		2056C848212E722C00684938 /* Linner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2056C847212E722C00684938 /* Linner.storyboard */; };
 		2056C84A212E730100684938 /* Client.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2056C849212E730100684938 /* Client.storyboard */; };
 		2056C84C212EA5B300684938 /* CreateLinePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C84B212EA5B300684938 /* CreateLinePostViewController.swift */; };
 		2056C84E212F5A8500684938 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C84D212F5A8500684938 /* PickDateViewController.swift */; };
@@ -63,7 +62,6 @@
 		2056C83D212DE0FE00684938 /* LineServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineServices.swift; sourceTree = "<group>"; };
 		2056C840212DFF5500684938 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		2056C842212E097F00684938 /* Constant Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant Database.swift"; sourceTree = "<group>"; };
-		2056C847212E722C00684938 /* Linner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Linner.storyboard; sourceTree = "<group>"; };
 		2056C849212E730100684938 /* Client.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Client.storyboard; sourceTree = "<group>"; };
 		2056C84B212EA5B300684938 /* CreateLinePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLinePostViewController.swift; sourceTree = "<group>"; };
 		2056C84D212F5A8500684938 /* PickDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				2056C849212E730100684938 /* Client.storyboard */,
 				2056C851212FB59000684938 /* ClientTasks.storyboard */,
-				2056C847212E722C00684938 /* Linner.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -386,7 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2080081F212C835C006E5223 /* LaunchScreen.storyboard in Resources */,
-				2056C848212E722C00684938 /* Linner.storyboard in Resources */,
 				2056C83A212D61FA00684938 /* GoogleService-Info.plist in Resources */,
 				2080081C212C835C006E5223 /* Assets.xcassets in Resources */,
 				2080081A212C835A006E5223 /* Main.storyboard in Resources */,

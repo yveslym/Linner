@@ -33,6 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
         
+        /// observe fb token change
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.FBSDKAccessTokenDidChange, object: nil, queue: OperationQueue.main, using: { notification in
+            if notification.userInfo![FBSDKAccessTokenDidChangeUserID] != nil {
+                // Handle user change
+            }
+        })
+
+        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         requestNotificationAuthorization(application: application)

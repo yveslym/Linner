@@ -48,7 +48,7 @@ struct UserServices{
     /// method to add google user to firrebase
     static func loginWithGoogle(googleUser: GIDGoogleUser, completion: @escaping(User?) -> ()){
         let profile = googleUser.profile
-        let user = User(fn: (profile?.givenName)!, ln: (profile?.familyName)!, un: (profile?.name)!, deviceToken: "", accountType: "", email: (profile?.email)!)
+        let user = User(fn: (profile?.givenName)!, ln: (profile?.familyName)!, un: (profile?.name)!, deviceToken: "", accountType: "client", email: (profile?.email)!)
         if (profile?.hasImage)!{
         user.profileUrl = profile?.imageURL(withDimension: 300).absoluteString
         }
@@ -80,7 +80,7 @@ struct UserServices{
                     
                 }
              
-                let user = User(fn: profile.firstName, ln: profile.lastName, un: profile.name, deviceToken: "", accountType: "", email: authUser.email!, profileUrl: profile.imageURL(for: .square, size: CGSize(width: 100, height: 100)).absoluteString)
+                let user = User(fn: profile.firstName, ln: profile.lastName, un: profile.name, deviceToken: "", accountType: "client", email: authUser.email!, profileUrl: profile.imageURL(for: .square, size: CGSize(width: 100, height: 100)).absoluteString)
                 
                 /// fetch user from database
                 show(completion: { (databaseUser) in
