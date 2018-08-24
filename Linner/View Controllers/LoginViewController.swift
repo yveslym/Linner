@@ -40,17 +40,26 @@ extension LoginViewController: GIDSignInUIDelegate{
             return
         }
         
+        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         // ...
     
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let error = error {
-                print(error.localizedDescription)
+            if error == nil {
+               self.presentAlert(title: "Login Error", message: "coun't register please try again!!!")
                 return
             }
             // User is signed in
-            // ...
+            // register user
+            UserServices.loginWithGoogle(googleUser: user, completion: { (user) in
+                if user != nil{
+                    self.performSegue(withIdentifier: "client", sender: nil)
+                }
+                else{
+                    self.presentAlert(title: "Login Error", message: "coun't register please try again!!!")
+                }
+            })
         }
     }
     func setUpGoogleButton(){

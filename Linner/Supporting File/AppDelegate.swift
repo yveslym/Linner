@@ -126,7 +126,26 @@ extension AppDelegate: GIDSignInDelegate{
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        // ...
+       
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if error == nil {
+                //self.presentAlert(title: "Login Error", message: "coun't register please try again!!!")
+                return
+            }
+            // User is signed in
+            // register user
+            UserServices.loginWithGoogle(googleUser: user, completion: { (user) in
+                if user != nil{
+                  //  self.performSegue(withIdentifier: "client", sender: nil)
+                    let vc = UIStoryboard(name: "Client", bundle: nil).instantiateInitialViewController()
+                    self.window?.rootViewController = vc
+                    self.window?.makeKeyAndVisible()
+                }
+                else{
+                    //self.presentAlert(title: "Login Error", message: "coun't register please try again!!!")
+                }
+            })
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

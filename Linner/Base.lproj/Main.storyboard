@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p3o-SO-GDQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DZh-dl-Oq9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -102,45 +102,37 @@
                     </view>
                     <connections>
                         <outlet property="googleButton" destination="ztu-4w-tmu" id="6k5-A3-se8"/>
-                        <segue destination="DZh-dl-Oq9" kind="show" id="xml-U1-yhX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giP-J6-WQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="712.79999999999995" y="4.9475262368815596"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="LSA-sv-0iT">
             <objects>
-                <viewController id="DZh-dl-Oq9" sceneMemberID="viewController">
+                <viewController id="DZh-dl-Oq9" customClass="LoginViewController" customModule="Linner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qET-BY-rvF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQ2-tq-QlM">
-                                <rect key="frame" x="167" y="199" width="40" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEp-r7-zkM" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="490" width="240" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Client"/>
-                                <connections>
-                                    <segue destination="xKt-5J-Y7q" kind="show" id="M6Q-NN-YeF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD9-ff-pfu">
-                                <rect key="frame" x="166" y="354" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Linner"/>
-                                <connections>
-                                    <segue destination="QVh-p2-QQ3" kind="show" id="UEP-EA-Tfy"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bVG-d9-Ziu"/>
                     </view>
+                    <connections>
+                        <outlet property="googleButton" destination="yEp-r7-zkM" id="RFR-DK-Maq"/>
+                        <segue destination="xKt-5J-Y7q" kind="show" identifier="client" id="QwD-Zn-cor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddq-y7-Yfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="5"/>
+            <point key="canvasLocation" x="1568.8" y="4.9475262368815596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uPc-TN-1cD">
@@ -201,7 +193,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M6Q-NN-YeF"/>
-        <segue reference="UEP-EA-Tfy"/>
+        <segue reference="QwD-Zn-cor"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,20 +8,67 @@
 
 import Foundation
 import Firebase
+import GoogleSignIn
 
 
 struct UserServices{
     // method to create new user
-    static func create(_ password: String, user: User, completion: @escaping(Bool)->()){
+    static func create(user: User, completion: @escaping(User?)->()){
+        
+        InstanceID.instanceID().instanceID { (result, _) in
+        user.deviceToken = result?.token
+        
         let authUser = Auth.auth().currentUser
       
         let ref = Database.database().reference().child("Users").child((authUser?.uid)!)
         ref.setValue(user.toDictionary()) { (error, _) in
             if error != nil{
-                return completion(false)
+                return completion(nil)
             }
-            completion(true)
+            return completion(user)
         }
+    }
+}
+    // method to retrieve user from firebase
+    static func show(completion: @escaping(User?)-> ()){
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("Users").child(uid!)
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists(){
+                let user = try! JSONDecoder().decode(User.self, withJSONObject: snapshot.value!)
+                return completion(user)
+            }
+            else{
+                return completion(nil)
+            }
+        }
+    }
+    /// method to add google user to firrebase
+    static func loginWithGoogle(googleUser: GIDGoogleUser, completion: @escaping(User?) -> ()){
+        let profile = googleUser.profile
+        let user = User(fn: (profile?.givenName)!, ln: (profile?.familyName)!, un: (profile?.name)!, deviceToken: "", accountType: "", email: (profile?.email)!)
+        if (profile?.hasImage)!{
+        user.profileUrl = profile?.imageURL(withDimension: 300).absoluteString
+        }
+        
+        show { (existingUser) in
+            if existingUser == nil{
+                create( user: user) { (created) in
+                    if (created != nil){
+                       return completion(created!)
+                    }
+                    else{
+                        print("couldn't create user")
+                        completion(nil)
+                    }
+                }
+            }
+            else{
+                return completion(existingUser)
+            }
+           
+        }
+        
     }
     
 }

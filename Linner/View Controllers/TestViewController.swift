@@ -37,15 +37,13 @@ class TestViewController: UIViewController {
         }
     }
     func loginUser(){
-       
-        
         InstanceID.instanceID().instanceID { (result, error) in
            
             Auth.auth().createUser(withEmail: "yves@mail.com", password: "12345678", completion: { (auth, _) in
                 
                 let user = User(fn: "yves", ln: "son", un: "yveslym", deviceToken: (result?.token)!, accountType: "linner",email: (Auth.auth().currentUser?.email!)!)
                 
-                UserServices.create("", user: user, completion: { (created) in
+                UserServices.create(user: user, completion: { (created) in
                     print(created)
                 })
             })
