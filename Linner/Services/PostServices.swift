@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 struct PostServices{
+    
+    /// method to create new post
     static func create(post: Post, completion: @escaping (Post) -> ()){
         let ref = Constant.postRef.childByAutoId()
         post.postId = ref.key

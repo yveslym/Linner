@@ -16,6 +16,8 @@
 		2056C84A212E730100684938 /* Client.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2056C849212E730100684938 /* Client.storyboard */; };
 		2056C84C212EA5B300684938 /* CreateLinePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C84B212EA5B300684938 /* CreateLinePostViewController.swift */; };
 		2056C84E212F5A8500684938 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C84D212F5A8500684938 /* PickDateViewController.swift */; };
+		2056C850212F696300684938 /* viewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C84F212F696300684938 /* viewControllers.swift */; };
+		2056C852212FB59000684938 /* ClientTasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2056C851212FB59000684938 /* ClientTasks.storyboard */; };
 		20800815212C835A006E5223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800814212C835A006E5223 /* AppDelegate.swift */; };
 		20800817212C835A006E5223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800816212C835A006E5223 /* ViewController.swift */; };
 		2080081A212C835A006E5223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20800818212C835A006E5223 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		2056C849212E730100684938 /* Client.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Client.storyboard; sourceTree = "<group>"; };
 		2056C84B212EA5B300684938 /* CreateLinePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLinePostViewController.swift; sourceTree = "<group>"; };
 		2056C84D212F5A8500684938 /* PickDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateViewController.swift; sourceTree = "<group>"; };
+		2056C84F212F696300684938 /* viewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewControllers.swift; sourceTree = "<group>"; };
+		2056C851212FB59000684938 /* ClientTasks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ClientTasks.storyboard; sourceTree = "<group>"; };
 		20800811212C835A006E5223 /* Linner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20800814212C835A006E5223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20800816212C835A006E5223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				2056C840212DFF5500684938 /* Date+String.swift */,
+				2056C84F212F696300684938 /* viewControllers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2056C849212E730100684938 /* Client.storyboard */,
+				2056C851212FB59000684938 /* ClientTasks.storyboard */,
 				2056C847212E722C00684938 /* Linner.storyboard */,
 			);
 			path = Storyboards;
@@ -384,6 +390,7 @@
 				2056C83A212D61FA00684938 /* GoogleService-Info.plist in Resources */,
 				2080081C212C835C006E5223 /* Assets.xcassets in Resources */,
 				2080081A212C835A006E5223 /* Main.storyboard in Resources */,
+				2056C852212FB59000684938 /* ClientTasks.storyboard in Resources */,
 				2056C84A212E730100684938 /* Client.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +580,7 @@
 				20800853212C9790006E5223 /* LoginViewController.swift in Sources */,
 				2056C84E212F5A8500684938 /* PickDateViewController.swift in Sources */,
 				20800817212C835A006E5223 /* ViewController.swift in Sources */,
+				2056C850212F696300684938 /* viewControllers.swift in Sources */,
 				20800815212C835A006E5223 /* AppDelegate.swift in Sources */,
 				2080084F212C8D78006E5223 /* UserServices.swift in Sources */,
 				2056C83E212DE0FE00684938 /* LineServices.swift in Sources */,

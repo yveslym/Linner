@@ -18,7 +18,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+       // GIDSignIn.sharedInstance().signIn()
+        setUpGoogleButton()
 
     }
 
@@ -40,8 +41,7 @@ extension LoginViewController: GIDSignInUIDelegate{
         }
         
         guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         // ...
     
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
@@ -52,5 +52,9 @@ extension LoginViewController: GIDSignInUIDelegate{
             // User is signed in
             // ...
         }
+    }
+    func setUpGoogleButton(){
+        self.googleButton.colorScheme = .dark
+        self.googleButton.style = .wide
     }
 }

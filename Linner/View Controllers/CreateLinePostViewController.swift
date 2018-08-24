@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class CreateLinePostViewController: UIViewController {
     
     @IBOutlet weak var pickdateButton: UIButton!
@@ -38,12 +38,19 @@ class CreateLinePostViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let pickerVC = segue.destination as! PickDateViewController
+        pickerVC.linePost = self.linePost
     }
     
     @IBAction func unwindToMain(_ sender: UIStoryboardSegue) {
         //let sourceViewController = sender.source
         // Use data from the view controller which initiated the unwind segue
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if linePost.date != ""{
+            self.pickdateButton.titleLabel?.text = linePost.date
+        }
     }
 
 }
@@ -54,18 +61,33 @@ extension CreateLinePostViewController{
         self.performSegue(withIdentifier: "date", sender: nil)
     }
     @IBAction func doneButtonTapped(_ sender: UIButton){
-        
+        postTask { (posted) in
+            if posted{
+                print("posted")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
-    func postTask(){
+    func postTask(completion: @escaping(Bool)->()){
         guard let lineTitle = lineTitle.text, let lineAddress = lineAddress.text, let lineDescription = lineDescription.text else {return}
         let durartion = lineTimeDuration.selectedSegmentIndex
-        
+        let user = Auth.auth().currentUser
         linePost.location = lineAddress
         linePost.title = lineTitle
         linePost.description = lineDescription
         linePost.duration = String("\(durartion + 1)")
+        linePost.clientName = (user?.displayName)!
+        linePost.clientId = (user?.uid)!
+        if linePost.date == ""{
+            self.presentAlert(title: "Date missing", message: "Please add date line")
+            return
+        }
         
+        PostServices.create(post: linePost) { (post) in
+            print("post created")
+            completion(true)
+        }
     }
     
 }

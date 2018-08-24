@@ -30,7 +30,7 @@ class TestViewController: UIViewController {
         let user = Auth.auth().currentUser
         
        
-        let post = Post(clientID: (user?.uid)!, clientName: (user?.email!)!, postID: "", date: Date().toString(), location: "24 marshal street, san francisco, CA 94102")
+        let post = Post()//Post(clientID: (user?.uid)!, clientName: (user?.email!)!, postID: "", date: Date().toString(), location: "24 marshal street, san francisco, CA 94102")
         PostServices.create(post: post) { (post) in
             self.posts.append(post)
             print(post.postId!)
