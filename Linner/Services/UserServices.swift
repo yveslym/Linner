@@ -6,9 +6,11 @@
 //  Copyright © 2018 Yves Songolo. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
 
 struct UserServices{
@@ -66,9 +68,41 @@ struct UserServices{
             else{
                 return completion(existingUser)
             }
-           
         }
-        
+    }
+    
+    static func loginWithFacebook(sender: UIViewController,completion: @escaping(User?)->()){
+        FBSDKProfile.loadCurrentProfile(completion: { profile, error in
+            if let profile = profile {
+                guard let authUser = Auth.auth().currentUser else {
+                    print("user is not auth")
+                    return completion(nil)
+                    
+                }
+             
+                let user = User(fn: profile.firstName, ln: profile.lastName, un: profile.name, deviceToken: "", accountType: "", email: authUser.email!, profileUrl: profile.imageURL(for: .square, size: CGSize(width: 100, height: 100)).absoluteString)
+                
+                /// fetch user from database
+                show(completion: { (databaseUser) in
+                    if let databaseUser = databaseUser{
+                        completion(databaseUser)
+                    }
+                    else{
+                        /// create user if first time login
+                        create(user: user, completion: { (createdUser) in
+                            if let user = createdUser{
+                                completion(user)
+                            }
+                            else{
+                                print("user wasn't create in the database")
+                                completion(nil)
+                            }
+                        })
+                    }
+                })
+                
+            }
+        })
     }
     
 }

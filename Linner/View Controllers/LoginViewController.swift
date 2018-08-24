@@ -45,18 +45,23 @@ extension LoginViewController: FBSDKLoginButtonDelegate{
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
 
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let error = error {
+            if error != nil {
                 // ...
                 return
             }
             // User is signed in
-        
+            UserServices.loginWithFacebook(sender: self, completion: { (user) in
+                if let user = user{
+                     self.performSegue(withIdentifier: "client", sender: nil)
+                }
+            })
         }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        <#code#>
+        
     }
+    
     
     
 }
