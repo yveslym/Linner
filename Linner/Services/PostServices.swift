@@ -24,19 +24,15 @@ struct PostServices{
     static func show(completion: @escaping([Post]?)->()){
         var posts = [Post]()
         let ref = Constant.postRef
-        let uid = Auth.auth().currentUser?.uid
-        
+       
         ref.observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists(){
-                // this code have to bo improve
                 snapshot.children.forEach({ (snap) in
                     
                     let snap = snap as! DataSnapshot
                     
                     let post = Post(snapshot: snap )
-                    if post.clientId != uid{
                     posts.append(post)
-                    }
                 })
                 completion(posts)
             }

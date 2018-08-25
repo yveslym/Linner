@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
 class LinnerMainViewController: UIViewController {
 
     // - Mark: UIBoutlet
@@ -29,6 +30,8 @@ class LinnerMainViewController: UIViewController {
         }
     }
     
+    var uid = String()
+    
     // - MARK: Method
     
     
@@ -36,18 +39,25 @@ class LinnerMainViewController: UIViewController {
         
         PostServices.show { (post) in
             if let post = post {
-                self.posts = post
+                let filtredPost = post.filter({$0.clientId != self.uid})
+                self.posts = filtredPost
             }
         }
     }
     
     private func observePost(){
-        
+        PostServices.observeNewPostEntry { (post) in
+            if post.clientId != self.uid{
+            self.posts.append(post)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.uid = (Auth.auth().currentUser?.uid)!
+        retrieveLinePost()
+        observePost()
         // Do any additional setup after loading the view.
     }
 
@@ -79,7 +89,15 @@ extension LinnerMainViewController: UITableViewDelegate,UITableViewDataSource{
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = self.posts[indexPath.row]
+        self.performSegue(withIdentifier: "next", sender: post)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let post = sender as! Post
+        let vc = segue.destination as! TaskDetailViewController
+        vc.post = post
+    }
     
 }
 

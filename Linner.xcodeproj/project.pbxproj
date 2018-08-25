@@ -22,6 +22,7 @@
 		2056C85B2130E55300684938 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C85A2130E55300684938 /* PostTableViewCell.swift */; };
 		2056C85D21310AA600684938 /* Linner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2056C85C21310AA600684938 /* Linner.storyboard */; };
 		2056C85F2131DF2C00684938 /* LinnerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C85E2131DF2C00684938 /* LinnerMainViewController.swift */; };
+		2056C8612131FE9400684938 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C8602131FE9400684938 /* TaskDetailViewController.swift */; };
 		20800815212C835A006E5223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800814212C835A006E5223 /* AppDelegate.swift */; };
 		20800817212C835A006E5223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800816212C835A006E5223 /* ViewController.swift */; };
 		2080081A212C835A006E5223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20800818212C835A006E5223 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		2056C85A2130E55300684938 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		2056C85C21310AA600684938 /* Linner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Linner.storyboard; sourceTree = "<group>"; };
 		2056C85E2131DF2C00684938 /* LinnerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinnerMainViewController.swift; sourceTree = "<group>"; };
+		2056C8602131FE9400684938 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		20800811212C835A006E5223 /* Linner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20800814212C835A006E5223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20800816212C835A006E5223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				2056C84D212F5A8500684938 /* PickDateViewController.swift */,
 				2056C8532130D6B000684938 /* MyTaskViewController.swift */,
 				2056C85E2131DF2C00684938 /* LinnerMainViewController.swift */,
+				2056C8602131FE9400684938 /* TaskDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				2056C8592130E53200684938 /* LineTableViewCell.swift in Sources */,
 				2056C83C212DDF3F00684938 /* Line.swift in Sources */,
 				2056C85F2131DF2C00684938 /* LinnerMainViewController.swift in Sources */,
+				2056C8612131FE9400684938 /* TaskDetailViewController.swift in Sources */,
 				2080084B212C89F4006E5223 /* Post.swift in Sources */,
 				2056C8542130D6B000684938 /* MyTaskViewController.swift in Sources */,
 				20800857212CA8FD006E5223 /* PostServices.swift in Sources */,

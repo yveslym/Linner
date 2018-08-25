@@ -53,6 +53,7 @@ extension LoginViewController: FBSDKLoginButtonDelegate{
             // User is signed in
             UserServices.loginWithFacebook(sender: self, completion: { (user) in
                 if user != nil{
+                    User.setCurrent(user!, writeToUserDefaults: true)
                      self.performSegue(withIdentifier: "client", sender: nil)
                 }
             })

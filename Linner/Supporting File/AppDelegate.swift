@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // setup the view
         
-        if Auth.auth().currentUser != nil{
+        if UserDefaults.standard.value(forKey: "current") != nil{
             
             // check if it's a liner account
             if isAlinner(){
@@ -154,8 +154,8 @@ extension AppDelegate: GIDSignInDelegate{
             // User is signed in
             // register user
             UserServices.loginWithGoogle(googleUser: user, completion: { (user) in
-                if user != nil{
-                  //  self.performSegue(withIdentifier: "client", sender: nil)
+                if let user = user{
+                 User.setCurrent(user, writeToUserDefaults: true)
                     let vc = UIStoryboard(name: "Client", bundle: nil).instantiateInitialViewController()
                     self.window?.rootViewController = vc
                     self.window?.makeKeyAndVisible()
