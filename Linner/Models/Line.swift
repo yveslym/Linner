@@ -21,6 +21,8 @@ class Line: Decodable{
     let location: String
     let date: String
     var lineId: String?
+    var title: String
+    var linnerName: String
     
     init(post: Post){
         clientId = post.clientId
@@ -33,6 +35,8 @@ class Line: Decodable{
         location = post.location
         date = post.date
         isTaken = true
+        title = ""
+        linnerName = ""
     }
     
     func toDictionary()-> [String:Any]{
@@ -46,7 +50,9 @@ class Line: Decodable{
                 "lineTime":lineTime,
                 "location":location,
                 "date":date,
-                "lineId":lineId ?? ""]
+                "lineId":lineId ?? "",
+                "title":title,
+                "linnerName":linnerName]
     }
 }
 

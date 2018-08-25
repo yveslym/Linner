@@ -51,27 +51,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-//        if #available(iOS 10.0, *) {
-//            // For iOS 10 display notification (sent via APNS)
-//            UNUserNotificationCenter.current().delegate = self
-//            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-//            UNUserNotificationCenter.current().requestAuthorization(
-//                options: authOptions,
-//                completionHandler: {_, _ in })
-//            // For iOS 10 data message (sent via FCM
-//            Messaging.messaging().delegate = self
-//        } else {
-//            let settings: UIUserNotificationSettings =
-//                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-//            application.registerUserNotificationSettings(settings)
-//        }
+        // setup the view
         
+        if Auth.auth().currentUser != nil{
+            
+            // check if it's a liner account
+            if isAlinner(){
+                // go to linner view
+            }
+            else{
+                let mainVC = UIStoryboard(name: "Client", bundle: nil).instantiateInitialViewController()
+                window?.rootViewController = mainVC
+                window?.makeKeyAndVisible()
+            }
+        }
         
        
         
         return true
     }
     
+    private func isAlinner() -> Bool{
+        let userDefault = UserDefaults.standard
+        if userDefault.value(forKey: "isLinner") != nil{
+            return true
+        }
+        return false
+    }
     
     func requestNotificationAuthorization(application: UIApplication) {
         if #available(iOS 10.0, *) {
