@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: Decodable{
+class User: Codable{
     let firstName: String
     let lastName: String
     let userName: String
@@ -16,6 +16,34 @@ class User: Decodable{
     let accountType: String
     let email: String
     var profileUrl : String?
+    
+    private static var _current: User?
+    
+    static var current: User {
+        if let currentUser = _current  {
+            return currentUser
+        }
+        else{
+            let data =   UserDefaults.standard.value(forKey: "current") as? Data
+            let user = try! JSONDecoder().decode(User.self, from: data!)
+            return user
+        }
+       
+    }
+    
+    // MARK: - Class Methods
+    
+    class func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
+        if writeToUserDefaults {
+            if let data = try? JSONEncoder().encode(user) {
+                UserDefaults.standard.set(data, forKey: "current")
+            }
+        }
+        
+        _current = user
+    }
+    
+
     
     init(fn: String, ln: String, un: String, deviceToken: String, accountType: String, email: String, profileUrl: String? = nil){
         self.firstName = fn

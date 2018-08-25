@@ -14,6 +14,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postLocation: UILabel!
     @IBOutlet weak var postStatus: UILabel!
+    @IBOutlet weak var lineTaskDuration: UILabel!
+    @IBOutlet weak var clientName: UILabel!
+    @IBOutlet weak var clientProfilePic: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

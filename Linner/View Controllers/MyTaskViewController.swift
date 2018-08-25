@@ -72,17 +72,7 @@ class MyTaskViewController: UIViewController {
 extension MyTaskViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if section == 1{
-//            if lines.count == 0{
-//                selectedCell = .post
-//                return posts.count
-//            }
-//            else{
-//                selectedCell = .line
-//                return lines.count
-//            }
-//        }
-//        else{
+
         
         switch section{
         case 0:

@@ -54,4 +54,7 @@ extension String {
         
         return formatter.date(from: yourString)!
     }
+    func toURL()-> URL{
+        return URL(string: self)!
+    }
 }

@@ -20,6 +20,8 @@
 		2056C8542130D6B000684938 /* MyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C8532130D6B000684938 /* MyTaskViewController.swift */; };
 		2056C8592130E53200684938 /* LineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C8582130E53200684938 /* LineTableViewCell.swift */; };
 		2056C85B2130E55300684938 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C85A2130E55300684938 /* PostTableViewCell.swift */; };
+		2056C85D21310AA600684938 /* Linner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2056C85C21310AA600684938 /* Linner.storyboard */; };
+		2056C85F2131DF2C00684938 /* LinnerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056C85E2131DF2C00684938 /* LinnerMainViewController.swift */; };
 		20800815212C835A006E5223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800814212C835A006E5223 /* AppDelegate.swift */; };
 		20800817212C835A006E5223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20800816212C835A006E5223 /* ViewController.swift */; };
 		2080081A212C835A006E5223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20800818212C835A006E5223 /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 		2056C8532130D6B000684938 /* MyTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskViewController.swift; sourceTree = "<group>"; };
 		2056C8582130E53200684938 /* LineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewCell.swift; sourceTree = "<group>"; };
 		2056C85A2130E55300684938 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		2056C85C21310AA600684938 /* Linner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Linner.storyboard; sourceTree = "<group>"; };
+		2056C85E2131DF2C00684938 /* LinnerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinnerMainViewController.swift; sourceTree = "<group>"; };
 		20800811212C835A006E5223 /* Linner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20800814212C835A006E5223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20800816212C835A006E5223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2056C849212E730100684938 /* Client.storyboard */,
+				2056C85C21310AA600684938 /* Linner.storyboard */,
 				2056C851212FB59000684938 /* ClientTasks.storyboard */,
 			);
 			path = Storyboards;
@@ -256,6 +261,7 @@
 				2056C84B212EA5B300684938 /* CreateLinePostViewController.swift */,
 				2056C84D212F5A8500684938 /* PickDateViewController.swift */,
 				2056C8532130D6B000684938 /* MyTaskViewController.swift */,
+				2056C85E2131DF2C00684938 /* LinnerMainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2080081F212C835C006E5223 /* LaunchScreen.storyboard in Resources */,
+				2056C85D21310AA600684938 /* Linner.storyboard in Resources */,
 				2056C83A212D61FA00684938 /* GoogleService-Info.plist in Resources */,
 				2080081C212C835C006E5223 /* Assets.xcassets in Resources */,
 				2080081A212C835A006E5223 /* Main.storyboard in Resources */,
@@ -562,6 +569,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -577,6 +585,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -607,6 +616,7 @@
 				2056C841212DFF5500684938 /* Date+String.swift in Sources */,
 				2056C8592130E53200684938 /* LineTableViewCell.swift in Sources */,
 				2056C83C212DDF3F00684938 /* Line.swift in Sources */,
+				2056C85F2131DF2C00684938 /* LinnerMainViewController.swift in Sources */,
 				2080084B212C89F4006E5223 /* Post.swift in Sources */,
 				2056C8542130D6B000684938 /* MyTaskViewController.swift in Sources */,
 				20800857212CA8FD006E5223 /* PostServices.swift in Sources */,

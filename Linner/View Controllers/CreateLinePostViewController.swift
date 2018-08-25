@@ -79,6 +79,7 @@ extension CreateLinePostViewController{
         linePost.duration = String("\(durartion + 1)")
         linePost.clientName = (user?.displayName)!
         linePost.clientId = (user?.uid)!
+        linePost.posterImage = User.current.profileUrl!
         if linePost.date == ""{
             self.presentAlert(title: "Date missing", message: "Please add date line")
             return

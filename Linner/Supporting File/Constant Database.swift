@@ -17,6 +17,6 @@ struct Constant{
      static let newPost = Database.database().reference().child("LinePost").childByAutoId()
      static let archivePost = Database.database().reference().child("archivePost")
      static let archiveLine = Database.database().reference().child("archivedLine")
-    
+    static let currentUser = "current"
     
 }

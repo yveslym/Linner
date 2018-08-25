@@ -17,6 +17,7 @@ target 'Linner' do
   pod 'GoogleSignIn'
   pod 'Firebase/Messaging'
   pod 'FBSDKLoginKit'
+  pod 'Kingfisher', '~> 4.0'
   target 'LinnerTests' do
     inherit! :search_paths
     # Pods for testing

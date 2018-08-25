@@ -18,8 +18,9 @@ class Post: Decodable{
     var description: String
     var title: String
     var duration: String
+    var posterImage: String
     
-    init(clientID: String, clientName: String,postID: String, date: String, location: String, title: String, description: String, duration: String){
+    init(clientID: String, clientName: String,postID: String, date: String, location: String, title: String, description: String, duration: String, posterImage: String){
         self.clientId = clientID
         self.clientName = clientName
         self.date = date
@@ -29,6 +30,7 @@ class Post: Decodable{
         self.title = title
         self.description = description
         self.duration = duration
+        self.posterImage = posterImage
         
     }
     init(){
@@ -41,7 +43,7 @@ class Post: Decodable{
         self.title = ""
         self.description = ""
          self.duration = ""
-        
+         self.posterImage = ""
     }
     
     init(snapshot: DataSnapshot){
@@ -56,6 +58,7 @@ class Post: Decodable{
         self.title = value["title"] as! String
         self.description = value["description"] as! String
          self.duration = value["duration"] as! String
+         self.posterImage = value["posterImage"] as! String
     }
     
     func toDictionary() -> [String: Any]{
@@ -66,7 +69,8 @@ class Post: Decodable{
                 "date":date,
                 "duration":duration,
                 "description":description,
-                "title":title]
+                "title":title,
+                "posterImage":posterImage]
     }
 }
 

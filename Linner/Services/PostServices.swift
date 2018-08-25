@@ -24,13 +24,19 @@ struct PostServices{
     static func show(completion: @escaping([Post]?)->()){
         var posts = [Post]()
         let ref = Constant.postRef
+        let uid = Auth.auth().currentUser?.uid
+        
         ref.observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists(){
+                // this code have to bo improve
                 snapshot.children.forEach({ (snap) in
+                    
                     let snap = snap as! DataSnapshot
+                    
                     let post = Post(snapshot: snap )
+                    if post.clientId != uid{
                     posts.append(post)
-                    // let p = try! JSONDecoder().decode(Post.self, withJSONObject: snap.value)
+                    }
                 })
                 completion(posts)
             }
@@ -39,6 +45,8 @@ struct PostServices{
             }
         }
     }
+    
+    /// method to archive post when it's taken
     static func archviePost(post: Post, completion: @escaping(Bool)-> ()){
         let ref = Constant.archivePost.child(post.postId!)
         ref.setValue(post.toDictionary()) { (_, _) in
@@ -48,7 +56,17 @@ struct PostServices{
                 completion(true)
                 }
             })
-            
+        }
+    }
+    static func observeNewPostEntry(completion: @escaping(Post) ->()){
+        
+       let ref = Constant.postRef
+        ref.observe(.childAdded) { (snapshot) in
+            let post = try! JSONDecoder().decode(Post.self, withJSONObject: snapshot.value!)
+            completion(post)
         }
     }
 }
+
+
+
