@@ -26,7 +26,14 @@ class TaskDetailViewController: UIViewController {
     
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        
+       
+       
+        LineServices.create(post: post) { (line) in
+            print("taken")
+            if line?.isTaken == true{
+                self.doneButton.isEnabled = false
+            }
+        }
     }
     
     @IBAction func returnButton(_ sender: Any) {
@@ -52,10 +59,20 @@ class TaskDetailViewController: UIViewController {
         let now = Date()
         let endTime = post.date.toDate()
        
-        let minuteCount = Double(LineServices.calculateTimeInterval(start: now, end: endTime))
+        let minuteCount = Double(endTime.minutes(from: now))
+        let day = endTime.days(from: now)
+        
         //self.countDown = CountdownLabel(frame: self.countDown.frame, minutes: minuteCount!) // you can use NSDate as well
-        countDown.addTime(time: minuteCount! * 60)
+        //countDown.addTime(time: minuteCount)
+        
+        if day <= 1{
+       countDown.setCountDownDate(targetDate: endTime as NSDate)
+        
+       // countDown.animationType = .Pixelate
         self.countDown.start()
+        }else{
+            self.countDown.text = post.date
+        }
     }
 
     override func didReceiveMemoryWarning() {
