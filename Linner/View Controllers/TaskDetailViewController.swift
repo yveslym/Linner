@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Kingfisher
+import CountdownLabel
 
 class TaskDetailViewController: UIViewController {
 
@@ -20,6 +21,9 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var taskDescription: UILabel!
     @IBOutlet weak var taskMap: MKMapView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var countDown: CountdownLabel!
+    
+    
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         
@@ -40,6 +44,18 @@ class TaskDetailViewController: UIViewController {
         taskDescription.text = post.description
         self.imageVIew.kf.setImage(with: URL(string: post.posterImage)!)
         addressToCoordinatesConverter(address: post.location)
+       
+        
+        countDownTime()
+    }
+    func countDownTime(){
+        let now = Date()
+        let endTime = post.date.toDate()
+       
+        let minuteCount = Double(LineServices.calculateTimeInterval(start: now, end: endTime))
+        //self.countDown = CountdownLabel(frame: self.countDown.frame, minutes: minuteCount!) // you can use NSDate as well
+        countDown.addTime(time: minuteCount! * 60)
+        self.countDown.start()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +76,10 @@ class TaskDetailViewController: UIViewController {
                     self.taskMap.addAnnotation(annotation)
 //                    self.taskMap.selectedAnnotations(annotation, animated: true)
                     self.taskMap.selectAnnotation(annotation, animated: true)
+                    self.taskMap.setCenter(annotation.coordinate, animated: true)
+                    let viewRegion = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 1000, 1000)
+                   
+                    self.taskMap.setRegion(viewRegion, animated: true)
                 }
             }
         })

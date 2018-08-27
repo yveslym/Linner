@@ -106,7 +106,7 @@ struct LineServices{
             
         }
     }
-    static private func calculateTimeInterval(start: Date, end:Date) -> String{
+    static  func calculateTimeInterval(start: Date, end:Date) -> String{
         let diff = Int(end.timeIntervalSince1970 - start.timeIntervalSince1970)
         let inHours = diff/3600
         let inMin = (diff - inHours * 3600) / 60
